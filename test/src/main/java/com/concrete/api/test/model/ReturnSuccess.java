@@ -1,25 +1,10 @@
 package com.concrete.api.test.model;
 
-import com.sun.istack.NotNull;
-
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import java.time.OffsetDateTime;
 
-public class User {
+public class ReturnSuccess {
 
-    @Id
     private String id;
-
-    @NotNull
-    private String name;
-
-    @NotNull
-    private String email;
-
-    private String password;
-
-    private String token;
 
     private OffsetDateTime created;
 
@@ -27,44 +12,21 @@ public class User {
 
     private OffsetDateTime lastLogin;
 
+
+    public ReturnSuccess(User userSaved)
+    {
+        this.id = userSaved.getId();
+        this.created = userSaved.getCreated();
+        this.modified = userSaved.getModified();
+        this.lastLogin = userSaved.getLastLogin();
+    }
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
     }
 
     public OffsetDateTime getCreated() {
@@ -90,6 +52,4 @@ public class User {
     public void setLastLogin(OffsetDateTime lastLogin) {
         this.lastLogin = lastLogin;
     }
-
-
 }

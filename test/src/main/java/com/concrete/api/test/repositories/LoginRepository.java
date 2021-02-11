@@ -1,4 +1,15 @@
 package com.concrete.api.test.repositories;
 
-public class LoginRepository {
+import com.concrete.api.test.model.Login;
+import com.concrete.api.test.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface LoginRepository extends JpaRepository<Login, Long>{
+
+    List<Login> findByUser(User user);
+
 }
