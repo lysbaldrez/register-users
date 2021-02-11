@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface LoginRepository extends JpaRepository<LoginRegister, Long>{
 
-    List<Login> findByUser(User user);
+    List<LoginRegister> findByUser(User user);
 
 }

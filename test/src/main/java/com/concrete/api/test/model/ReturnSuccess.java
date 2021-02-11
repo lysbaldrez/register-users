@@ -1,5 +1,6 @@
 package com.concrete.api.test.model;
 
+import javax.persistence.Entity;
 import java.time.OffsetDateTime;
 
 public class ReturnSuccess {

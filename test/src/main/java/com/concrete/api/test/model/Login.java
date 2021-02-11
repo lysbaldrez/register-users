@@ -1,5 +1,7 @@
 package com.concrete.api.test.model;
 
+import javax.persistence.Entity;
+
 public class Login {
 
     private String email;
