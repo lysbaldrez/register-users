@@ -5,9 +5,11 @@ import com.concrete.api.test.model.User;
 import com.concrete.api.test.repositories.UserRepository;
 import org.hibernate.event.spi.SaveOrUpdateEvent;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
 
+@Service
 public class UserService {
 
     @Autowired
