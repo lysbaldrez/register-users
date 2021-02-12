@@ -2,10 +2,9 @@ package com.concrete.api.test.model;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.OffsetDateTime;
+import java.util.List;
 
 @Entity
 public class User {
@@ -20,6 +19,10 @@ public class User {
     private String email;
 
     private String password;
+
+    @ElementCollection
+    @OneToMany( cascade = CascadeType.PERSIST)
+    private List<Phone> phones;
 
     private String token;
 

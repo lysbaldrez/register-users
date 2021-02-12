@@ -1,15 +1,13 @@
 package com.concrete.api.test.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.OffsetDateTime;
 
 @Entity
 public class LoginRegister {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @JoinColumn(name = "usuario_id")
