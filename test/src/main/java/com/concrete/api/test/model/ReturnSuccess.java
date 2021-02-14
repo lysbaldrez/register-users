@@ -2,10 +2,20 @@ package com.concrete.api.test.model;
 
 import javax.persistence.Entity;
 import java.time.OffsetDateTime;
+import java.util.List;
+import java.util.UUID;
 
 public class ReturnSuccess {
 
-    private String id;
+    private String name;
+
+    private String email;
+
+    private String password;
+
+    private List<Phone> phones;
+
+    private UUID id;
 
     private OffsetDateTime created;
 
@@ -18,6 +28,10 @@ public class ReturnSuccess {
 
     public ReturnSuccess(User userSaved)
     {
+        this.name = userSaved.getName();
+        this.email = userSaved.getEmail();
+        this.password = userSaved.getPassword();
+        this.phones = userSaved.getPhones();
         this.id = userSaved.getId();
         this.created = userSaved.getCreated();
         this.modified = userSaved.getModified();
@@ -25,12 +39,44 @@ public class ReturnSuccess {
         this.token = userSaved.getToken();
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(List<Phone> phones) {
+        this.phones = phones;
     }
 
     public OffsetDateTime getCreated() {
