@@ -26,6 +26,9 @@ public class UserService {
         user.setCreated(OffsetDateTime.now());
         user.setLastLogin(OffsetDateTime.now());
 
+        TokenService tokenService = new TokenService();
+        user.setToken(tokenService.generateToken(user));
+
         User userSaved = userRepository.save(user);
 
         return userSaved;
