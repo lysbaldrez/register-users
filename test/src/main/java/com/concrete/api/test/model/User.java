@@ -1,15 +1,20 @@
 package com.concrete.api.test.model;
 
 import com.sun.istack.NotNull;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
-public class User {
+public class User implements UserDetails {
 
     @Id
+    @GeneratedValue
     private String id;
 
     @NotNull
@@ -20,10 +25,6 @@ public class User {
 
     private String password;
 
-    @ElementCollection
-    @OneToMany( cascade = CascadeType.PERSIST)
-    private List<Phone> phones;
-
     private String token;
 
     private OffsetDateTime created;
@@ -31,6 +32,18 @@ public class User {
     private OffsetDateTime modified;
 
     private OffsetDateTime lastLogin;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    private List <Profile> profiles = new ArrayList<>();
+
+    @ElementCollection
+    @OneToMany( cascade = CascadeType.PERSIST)
+    private List<Phone> phones;
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return this.profiles;
+    }
 
     public String getId() {
         return id;
@@ -96,5 +109,28 @@ public class User {
         this.lastLogin = lastLogin;
     }
 
+    @Override
+    public String getUsername() {
+        return null;
+    }
 
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }
 }

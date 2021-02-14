@@ -13,6 +13,8 @@ public class ReturnSuccess {
 
     private OffsetDateTime lastLogin;
 
+    private String token;
+
 
     public ReturnSuccess(User userSaved)
     {
@@ -20,6 +22,7 @@ public class ReturnSuccess {
         this.created = userSaved.getCreated();
         this.modified = userSaved.getModified();
         this.lastLogin = userSaved.getLastLogin();
+        this.token = userSaved.getToken();
     }
 
     public String getId() {
@@ -52,5 +55,13 @@ public class ReturnSuccess {
 
     public void setLastLogin(OffsetDateTime lastLogin) {
         this.lastLogin = lastLogin;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
