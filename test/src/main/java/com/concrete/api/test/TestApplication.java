@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
-@ComponentScan(basePackages = {"com.concrete.api.test.services"})
+@ComponentScan(basePackages = {"com.concrete.api.test.services", "com.concrete.api.test.controller"})
 @EnableJpaRepositories("com.concrete.api.test.*")
 public class TestApplication extends SpringBootServletInitializer {
 
