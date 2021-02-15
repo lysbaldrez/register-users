@@ -3,21 +3,14 @@ package com.concrete.api.test.controller;
 import com.concrete.api.test.model.ReturnSuccess;
 import com.concrete.api.test.model.User;
 import com.concrete.api.test.repositories.UserRepository;
-import exception.UnauthorizedToken;
+import com.concrete.api.test.exception.UnauthorizedToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import static java.util.concurrent.TimeUnit.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.Duration;
-import java.time.Instant;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.Date;
 import java.util.UUID;
 
 @RestController

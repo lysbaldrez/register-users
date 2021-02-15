@@ -1,10 +1,6 @@
-package exceptionHandler;
+package com.concrete.api.test.exceptionHandler;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.http.HttpStatus;
-
-import java.util.List;
-import java.util.Arrays;
 
 public class ApiError {
 
