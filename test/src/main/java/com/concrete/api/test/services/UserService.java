@@ -25,6 +25,7 @@ public class UserService {
 
         user.setCreated(OffsetDateTime.now());
         user.setLastLogin(OffsetDateTime.now());
+        user.setModified(OffsetDateTime.now());
 
         TokenService tokenService = new TokenService();
         user.setToken(tokenService.generateToken(user));

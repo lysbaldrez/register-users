@@ -34,9 +34,9 @@ public class RegisterController {
 
         User userSaved = userService.save(user);
 
-        ReturnSuccess retornoSucesso = new ReturnSuccess(userSaved);
+        ReturnSuccess returnSuccess = new ReturnSuccess(userSaved);
 
-        return retornoSucesso;
+        return returnSuccess;
 
     }
 }

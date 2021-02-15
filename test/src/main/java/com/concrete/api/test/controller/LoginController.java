@@ -21,9 +21,9 @@ public class LoginController {
 
         User userLogin = userService.login(login);
 
-        ReturnSuccess retornoSucesso = new ReturnSuccess(userLogin);
+        ReturnSuccess returnSuccess = new ReturnSuccess(userLogin);
 
-        return retornoSucesso;
+        return returnSuccess;
 
     }
 }

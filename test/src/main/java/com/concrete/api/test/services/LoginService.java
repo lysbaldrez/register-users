@@ -18,11 +18,10 @@ public class LoginService {
     public LoginRegister save (User user) {
 
         LoginRegister login = new LoginRegister();
-
         login.setUser(user);
         login.setCreated(OffsetDateTime.now());
         login.setLastLogin(OffsetDateTime.now());
-
+        login.setModified(OffsetDateTime.now());
         return loginRepository.save(login);
 
     }

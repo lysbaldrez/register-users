@@ -36,7 +36,6 @@ public class TokenService {
 
         public boolean isTokenValido(String token) {
             try {
-                //Método que devolve o JwsClains (que é um objeto onde consigo recuperar o token e as informações setadas dentro do token
                 Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token);
                 return true;
             } catch (Exception e) {
