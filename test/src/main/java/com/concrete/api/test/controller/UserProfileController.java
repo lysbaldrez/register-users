@@ -33,9 +33,9 @@ public class UserProfileController {
     @GetMapping(produces = { "application/json"}, headers = "Content-type=application/json")
     @ResponseStatus(HttpStatus.OK)
     public ReturnSuccess perfil(@PathVariable String id) throws UnauthorizedToken{
-
         String token;
         token = request.getHeader("Authorization");
+
         if (token == null || token.isEmpty () ) {
             throw new UnauthorizedToken("Não autorizado");
         }
@@ -51,8 +51,8 @@ public class UserProfileController {
         if (diff >= 30) {
             throw new UnauthorizedToken("Não autorizado");
         }
-        ReturnSuccess returnSuccess = new ReturnSuccess(user);
 
+        ReturnSuccess returnSuccess = new ReturnSuccess(user);
         return returnSuccess;
 
     }

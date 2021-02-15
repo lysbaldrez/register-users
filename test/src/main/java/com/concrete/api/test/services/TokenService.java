@@ -23,16 +23,16 @@ public class TokenService {
         private String secret;
 
 
-    public String generateToken(User userDetails) {
-        Map<String, Object> claims = new HashMap<>();
-        return doGenerateToken(claims, userDetails.getName());
-    }
+        public String generateToken(User userDetails) {
+            Map<String, Object> claims = new HashMap<>();
+            return doGenerateToken(claims, userDetails.getName());
+        }
 
-    private String doGenerateToken(Map<String, Object> claims, String subject) {
-        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 3600))
-                .signWith(SignatureAlgorithm.HS512, "secret").compact();
-    }
+        private String doGenerateToken(Map<String, Object> claims, String subject) {
+            return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
+                    .setExpiration(new Date(System.currentTimeMillis() + 3600))
+                    .signWith(SignatureAlgorithm.HS512, "secret").compact();
+        }
 
         public boolean isTokenValido(String token) {
             try {

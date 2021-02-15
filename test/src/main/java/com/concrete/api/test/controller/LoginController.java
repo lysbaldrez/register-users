@@ -18,11 +18,8 @@ public class LoginController {
     @PostMapping(produces = { "application/json"}, headers = "Content-type=application/json")
     @ResponseStatus(HttpStatus.ACCEPTED)
     public ReturnSuccess login(@RequestBody Login login) throws Exception {
-
         User userLogin = userService.login(login);
-
         ReturnSuccess returnSuccess = new ReturnSuccess(userLogin);
-
         return returnSuccess;
 
     }

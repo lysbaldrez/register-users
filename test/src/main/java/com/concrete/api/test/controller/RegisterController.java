@@ -29,13 +29,9 @@ public class RegisterController {
 
     @PostMapping(produces = { "application/json"}, headers = "Content-type=application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public ReturnSuccess adicionar(@Valid @RequestBody User user)
-    {
-
+    public ReturnSuccess adicionar(@Valid @RequestBody User user) {
         User userSaved = userService.save(user);
-
         ReturnSuccess returnSuccess = new ReturnSuccess(userSaved);
-
         return returnSuccess;
 
     }

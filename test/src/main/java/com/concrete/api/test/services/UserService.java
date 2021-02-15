@@ -16,7 +16,6 @@ public class UserService {
     private UserRepository userRepository;
 
     public User save(User user) {
-
         User userExisting = userRepository.findByEmail(user.getEmail());
 
         if (userExisting != null && !userExisting.equals(user)) {
@@ -31,19 +30,15 @@ public class UserService {
         user.setToken(tokenService.generateToken(user));
 
         User userSaved = userRepository.save(user);
-
         return userSaved;
     }
 
     public User update(User user) {
-
         return userRepository.saveAndFlush(user);
     }
 
     public User login(Login login) throws Exception {
-
         User userExisting = userRepository.findByEmail(login.getEmail());
-
         if (userExisting == null) {
             throw new Exception("Usuario e/ou senha invalidos");
         }
