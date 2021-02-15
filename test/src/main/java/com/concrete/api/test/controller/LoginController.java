@@ -19,8 +19,7 @@ public class LoginController {
     @ResponseStatus(HttpStatus.ACCEPTED)
     public ReturnSuccess login(@RequestBody Login login) throws Exception {
         User userLogin = userService.login(login);
-        ReturnSuccess returnSuccess = new ReturnSuccess(userLogin);
-        return returnSuccess;
+        return new ReturnSuccess(userLogin);
 
     }
 }

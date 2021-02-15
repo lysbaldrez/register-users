@@ -31,8 +31,7 @@ public class RegisterController {
     @ResponseStatus(HttpStatus.CREATED)
     public ReturnSuccess adicionar(@Valid @RequestBody User user) {
         User userSaved = userService.save(user);
-        ReturnSuccess returnSuccess = new ReturnSuccess(userSaved);
-        return returnSuccess;
+        return new ReturnSuccess(userSaved);
 
     }
 }

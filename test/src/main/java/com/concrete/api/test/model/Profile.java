@@ -21,6 +21,7 @@ public class Profile implements GrantedAuthority {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
     }

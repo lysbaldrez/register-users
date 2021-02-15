@@ -36,7 +36,7 @@ public class UserProfileController {
         String token;
         token = request.getHeader("Authorization");
 
-        if (token == null || token.isEmpty () ) {
+        if (token == null || token.isEmpty ()) {
             throw new UnauthorizedToken("Não autorizado");
         }
 
@@ -52,8 +52,7 @@ public class UserProfileController {
             throw new UnauthorizedToken("Não autorizado");
         }
 
-        ReturnSuccess returnSuccess = new ReturnSuccess(user);
-        return returnSuccess;
+        return new ReturnSuccess(user);
 
     }
 }
